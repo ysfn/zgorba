@@ -1,0 +1,19 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: 9c9e0314768baf53a6e3
+            clientSecret: bfc22bde334952f5d2acbebfa298a211e3fe9bbd
+          google:
+            client-id: 119964295255-1re8blciai1ac6cnutm16atf2ptllmv7.apps.googleusercontent.com
+            client-secret: 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
+app:
+  logout:
+    redirect-url: http://localhost:3000
+  login:
+    redirect-url: http://localhost:3000
+  cors:
+    allowedOrigins: http://localhost:3000, http://localhost:8080
+
