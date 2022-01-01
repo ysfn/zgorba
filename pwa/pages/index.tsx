@@ -24,15 +24,6 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           Welcome to zgorba!
         </h1>
-        <h2>Log in with</h2>
-        <ul className={styles.ul}>
-          <li className={styles.li}>
-            <a href={host + "/oauth2/authorization/google"}>Google</a>
-          </li>
-          <li className={styles.li}>
-            <a href={host + "/oauth2/authorization/github"}>Github</a>
-          </li>
-        </ul>
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>pages/index.tsx</code>
