@@ -1,2 +1,1 @@
-# zgorba
-SpringBoot app.
+# SpringBoot app
