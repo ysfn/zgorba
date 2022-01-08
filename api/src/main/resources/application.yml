@@ -4,11 +4,11 @@ spring:
       client:
         registration:
           github:
-            clientId: 9c9e0314768baf53a6e3
-            clientSecret: 7f38606f0bb143b251a90162afe22ed8b0dc473b
+            clientId:
+            clientSecret:
           google:
-            client-id: 119964295255-1re8blciai1ac6cnutm16atf2ptllmv7.apps.googleusercontent.com
-            client-secret: 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
+            client-id:
+            client-secret:
 app:
   login:
     redirect-url: http://localhost:3000
