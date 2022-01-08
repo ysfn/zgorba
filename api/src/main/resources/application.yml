@@ -4,14 +4,12 @@ spring:
       client:
         registration:
           github:
-            clientId: #clientId
-            clientSecret: #clientSecret
+            clientId: 9c9e0314768baf53a6e3
+            clientSecret: 7f38606f0bb143b251a90162afe22ed8b0dc473b
           google:
-            client-id: #clientId
-            client-secret: #clientSecret
+            client-id: 119964295255-1re8blciai1ac6cnutm16atf2ptllmv7.apps.googleusercontent.com
+            client-secret: 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
 app:
-  logout:
-    redirect-url: http://localhost:3000
   login:
     redirect-url: http://localhost:3000
   cors:

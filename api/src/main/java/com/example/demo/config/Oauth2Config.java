@@ -7,7 +7,10 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
+import org.springframework.security.web.authentication.logout.HttpStatusReturningLogoutSuccessHandler;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
+
+import javax.servlet.http.HttpServletResponse;
 
 @Configuration
 public class Oauth2Config extends WebSecurityConfigurerAdapter {
@@ -19,7 +22,9 @@ public class Oauth2Config extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().authorizeRequests(a -> a.anyRequest().authenticated())
                 .exceptionHandling(e -> e.authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED)))
-                .logout(l -> l.logoutSuccessUrl("/").permitAll())
+                .logout()
+                .logoutSuccessHandler(new HttpStatusReturningLogoutSuccessHandler(HttpStatus.OK))
+                .and()
                 .csrf(c -> c.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()))
                 .oauth2Login()
                 .successHandler(new SimpleUrlAuthenticationSuccessHandler(redirectUrl));
